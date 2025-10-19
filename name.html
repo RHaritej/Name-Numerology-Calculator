@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Name Value Calculator</title>
+  <style>
+    body { font-family: sans-serif; margin: 30px; }
+    .container { max-width: 400px; margin: auto; }
+    label { display: block; margin-bottom: 8px; }
+    input[type="text"] { width: 100%; padding: 8px; font-size: 1em; }
+    .result { margin-top: 18px; font-size: 1.2em; color: #006600; }
+    @media (max-width:600px ){
+          dis;
+    }
+        
+    
+  </style>
+</head>
+<body>
+  <div class="container" >
+    <h2>Name Numerology Calculator</h2>
+    <label for="nameInput">Enter Name:</label>
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+    <div class="result" id="result"></div>
+  </div>
+  <script>
+    // Letter to value mapping
+    const letterValues = {
+      A:1, I:1, J:1, Q:1, Y:1,
+      B:2, K:2, R:2,
+      C:3, G:3, L:3, S:3,
+      D:4, T:4, M:4,
+      E:5, H:5, N:5, X:5,
+      U:6, V:6, W:6,
+      O:7, Z:7,
+      F:8, P:8
+    };
+
+    document.getElementById('nameInput').addEventListener('input', function() {
+      const name = this.value.toUpperCase();
+      let sum = 0;
+      let breakdown = '';
+      for (let char of name) {
+        if (letterValues[char]) {
+          sum += letterValues[char];
+          breakdown += char + '(' + letterValues[char] + ') ';
+        }
+      }
+      document.getElementById('result').textContent =
+        name ? `Sum: ${sum}   [${breakdown.trim()}]` : '';
+    });
+  </script>
+</body>
+</html>
