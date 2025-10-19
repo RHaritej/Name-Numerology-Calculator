@@ -1,2 +1,2 @@
 # Name-Numerology-Calculator
-Each letter in the name is assign with a numeric value , this calculator helps you to sum the numeric values
+Each letter in the name is assigned with a numeric value , this calculator helps you to sum the numeric values
